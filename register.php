@@ -13,10 +13,10 @@
 		echo json_encode(array("status" => "inuse"));
 	}
 	else{
-		$query = "insert into users (username, password, email) values ('$username', '$password', '$email');";
+		$query = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')";
 		$result = mysqli_query($connect, $query);
 		
-		if($connect->query($query) === TRUE){
+		if($result){
 			echo json_encode(array("status" => "success"));
 		}
 		else{
