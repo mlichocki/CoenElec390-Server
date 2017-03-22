@@ -20,7 +20,7 @@
 		
 		if($result){
 			// sql to create table `".$name."`
-			$query = "CREATE TABLE $username (
+			$query = "CREATE TABLE `'$username'` (
   			`id` int(11) NOT NULL AUTO_INCREMENT,
   			`name` tinytext NOT NULL,
   			`username` varchar(45) NOT NULL,
