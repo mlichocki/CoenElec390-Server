@@ -20,7 +20,7 @@
 		
 		if($result){
 			// sql to create table
-			/*$query = "CREATE TABLE `$username` (
+			$query = "CREATE TABLE `$username` (
   			`id` int(11) NOT NULL AUTO_INCREMENT,
   			`name` tinytext NOT NULL,
   			`username` varchar(45) NOT NULL,
@@ -31,13 +31,13 @@
 			
 			$result = mysqli_query($connect, $query);
 
-			if ($result) {*/
+			if ($result) {
     				echo json_encode(array("status" => "success"));
-			/*} 
+			} 
 			else {
 				mysqli_query($connect, "DELETE FROM users where username = '$username'");
     				echo json_encode(array("status" => "fail"))
-			}*/
+			}
 		}
 		else{
 			echo json_encode(array("status" => "fail"));
