@@ -3,8 +3,8 @@
 	require "connect.php";
 
 	//Data entered in the application
-	$username = $_POST["username"];
-	$password = $_POST["password"];
+	$username = $_POST['username'];
+	$password = $_POST['password'];
 
 	//Search through the users table for the associated username and password
 	$query = "select * from users where username = '$username' and password = '$password';";
