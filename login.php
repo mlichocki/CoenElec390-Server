@@ -7,7 +7,7 @@
 	$password = $_POST['password'];
 
 	//Search through the users table for the associated username and password
-	$query = "SELEC * FROM users WHERE username = '$username' AND password = '$password';";
+	$query = "SELECT * FROM users WHERE BINARY username = '$username' AND BINARY password = '$password';";
 	$result = mysqli_query($connect, $query);
 
 	//If the user is found
