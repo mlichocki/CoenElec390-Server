@@ -4,14 +4,24 @@
 
 	$username = $_POST["username"];
 	$password = $_POST["password"];
-	$query = "insert into users (username, password) values ('$username', '$password');";
+	$email = $_POST["email"];
 
-	if($connect->query($query) === TRUE){
-		echo "Registration successful";
+	$query = "SELECT * FROM users WHERE BINARY username = '$username';";
+	$result = mysqli_query($connect, $query);
+
+	if(mysqli_num_rows($result) > 0){
+		echo json_encode(array("status" => "inuse"));
 	}
 	else{
-		echo "Registration unsuccessful"
-		//echo "Error: " . $query . "<br>" . $connect->error;
+		$query = "insert into users (username, password, email) values ('$username', '$password', '$email');";
+		$result = mysqli_query($connect, $query);
+		
+		if($connect->query($query) === TRUE){
+			echo json_encode(array("status" => "success"));
+		}
+		else{
+			echo json_encode(array("status" => "fail"));
+		}
 	}
 
 	$connect->close();
