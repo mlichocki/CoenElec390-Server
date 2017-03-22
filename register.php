@@ -19,8 +19,8 @@
 		$result = mysqli_query($connect, $query);
 		
 		if($result){
-			// sql to create table
-			$query = "CREATE TABLE `$username` (
+			// sql to create table `".$name."`
+			$query = "CREATE TABLE `'.$username.'` (
   			`id` int(11) NOT NULL AUTO_INCREMENT,
   			`name` tinytext NOT NULL,
   			`username` varchar(45) NOT NULL,
