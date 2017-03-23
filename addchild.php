@@ -9,8 +9,8 @@
 	//If the user is found
 	if(mysqli_num_rows($result) == 1){
 		$row = mysqli_fetch_assoc($result);
-		$email = $row["email"];
-		echo json_encode(array("status" => $email));
+		//$email = $row["email"];
+		echo json_encode(array("status" => $row["email"]));
 		mysqli_close($connect);
 	}
 	else{
