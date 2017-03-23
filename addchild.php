@@ -32,7 +32,7 @@
 
 		if($result){
 			
-			$query = "INSERT INTO '$guardianUsername' (username, name) VALUES ('$childUsername', '$name');";
+			$query = "INSERT INTO ".$guardianUsername." (username, name) VALUES ('$childUsername', '$name');";
 			$result = mysqli_query($connect, $query);
 
 			if($result){
