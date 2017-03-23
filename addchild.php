@@ -37,7 +37,7 @@
 
 			if($result){
 				
-				echo json_encode(array("status" => "success"));
+				echo json_encode(array("status" => "success", "name" => ".$name.", "username" => ".$childUsername."));
 				mysqli_close($connect);
 			}
 			else{
