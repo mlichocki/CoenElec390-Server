@@ -1,16 +1,16 @@
 <?php
 	require "connect.php";
-	$guardianUsername = $_POST['username'];
-	$childUsername = $_POST['password'];
-	$password = $_POST['email'];
+	$guardianUsername = $_POST['guardianUsername'];
+	$childUsername = $_POST['childUsername'];
+	$password = $_POST['password'];
 
 	$query = "SELECT * FROM users WHERE BINARY username = '$guardianUsername';";
 	$result = mysqli_query($connect, $query);
 	//If the user is found
 	if(mysqli_num_rows($result) == 1){
 		$row = mysqli_fetch_assoc($result);
-		//$email = $row["email"];
-		echo json_encode(array("status" => $row["email"]));
+		$email = $row["email"];
+		echo json_encode(array("status" => $email));
 		mysqli_close($connect);
 	}
 	else{
