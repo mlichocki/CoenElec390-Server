@@ -41,6 +41,7 @@
 				mysqli_close($connect);
 			}
 			else{
+				mysqli_query($connect, "DELETE FROM users where username = '$childUsername'");
 				echo json_encode(array("status" => "fail"));
 				mysqli_close($connect);
 			}
