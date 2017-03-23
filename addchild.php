@@ -32,20 +32,17 @@
 
 		if($result){
 			
-			echo json_encode(array("status" => "HERE"));
-			mysqli_close($connect);
-			
-			$query = "INSERT INTO $guardianUsername (username, name) VALUES ('$childUsername', '$name');";
+			$query = "INSERT INTO '$guardianUsername' (username, name) VALUES ('$childUsername', '$name');";
 			$result = mysqli_query($connect, $query);
 
 			if($result){
-				//***********************
+				
 				echo json_encode(array("status" => "success"));
 				mysqli_close($connect);
 			}
 			else{
 				echo json_encode(array("status" => "fail"));
-			mysqli_close($connect);
+				mysqli_close($connect);
 			}
 
 		} 
