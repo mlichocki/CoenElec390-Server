@@ -19,15 +19,14 @@
 		$result = mysqli_query($connect, $query);
 		
 		if($result){
-			// sql to create table `".$name."`
-			$query = "CREATE TABLE `'$username'` (
-  			`id` int(11) NOT NULL AUTO_INCREMENT,
-  			`name` tinytext NOT NULL,
-  			`username` varchar(45) NOT NULL,
-			`latitude` varchar(45) DEFAULT NULL,
-			`longitude` varchar(45) DEFAULT NULL,
-			PRIMARY KEY (`id`)
-			)";
+			// sql to create table
+			$query = "CREATE TABLE `coenelec390`.`'$username'` (
+			`id` INT NOT NULL,
+			`name` TEXT(45) NOT NULL,
+			`username` VARCHAR(45) NOT NULL,
+			`latitude` DOUBLE NULL DEFAULT NULL,
+			`longitude` DOUBLE NULL DEFAULT NULL,
+			PRIMARY KEY (`id`))"; 
 			
 			$result = mysqli_query($connect, $query);
 
