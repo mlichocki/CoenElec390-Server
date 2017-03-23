@@ -11,15 +11,13 @@
 	if(mysqli_num_rows($result) == 1){
 		$row = mysqli_fetch_assoc($result);
 		$email = $row["email"];
-		
-		echo json_encode(array("status" => "HERE"));
-		mysqli_close($connect);
+	
 	}
 	else{
 		echo json_encode(array("status" => "fail"));
 		mysqli_close($connect);
 	}
-/*
+
 	$query = "SELECT * FROM users WHERE BINARY username = '$username';";
 	$result = mysqli_query($connect, $query);
 
@@ -28,6 +26,9 @@
 		mysqli_close($connect);
 	}
 	else{
+		echo json_encode(array("status" => "HERE"));
+		mysqli_close($connect);
+		/*
 		$query = "INSERT INTO users (username, password, role, guardian, email) VALUES ('$childUsername', '$password', "child", '$guardianUsername', '$email');";
 		$result = mysqli_query($connect, $query);
 
@@ -50,6 +51,6 @@
     		echo json_encode(array("status" => "fail"));
 			mysqli_close($connect);
 		}
-	}
-	mysqli_close($connect);*/
+	}*/
+	mysqli_close($connect);
 ?>
