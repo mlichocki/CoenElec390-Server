@@ -19,13 +19,15 @@
 		
 		if($result){
     			echo json_encode(array("status" => "success"));
+			mysqli_close($connect);
 		} 
 		else {
 			//mysqli_query($connect, "DELETE FROM users where username = '$username'");
-    			echo json_encode(array("status" => "fail"))
+    			echo json_encode(array("status" => "fail"));
+			mysqli_close($connect);
 		}
 	}
 
-	$connect->close();
+	mysqli_close($connect);
 
 ?>
