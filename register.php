@@ -14,7 +14,7 @@
 		echo json_encode(array("status" => "inuse"));
 	}
 	else{
-		$query = "INSERT INTO users (username, password, role, email) VALUES ('$username', '$password', '$role', '$email')";
+		$query = "INSERT INTO users (username, password, role, email) VALUES ('$username', '$password', '$role', '$email');";
 		$result = mysqli_query($connect, $query);
 		
 		if($result){
