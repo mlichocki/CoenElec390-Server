@@ -18,7 +18,7 @@
 		mysqli_close($connect);
 	}
 
-	$query = "SELECT * FROM users WHERE BINARY username = '$username';";
+	$query = "SELECT * FROM users WHERE BINARY username = '$childUsername';";
 	$result = mysqli_query($connect, $query);
 
 	if(mysqli_num_rows($result) > 0){
