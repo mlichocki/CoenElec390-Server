@@ -27,7 +27,7 @@
 	}
 	else{
 	
-		$query = "INSERT INTO users (username, password, role, guardian, email) VALUES ('$childUsername', '$password', "child", '$guardianUsername', '$email');";
+		$query = "INSERT INTO users (username, password, role, guardian, email) VALUES ('$childUsername', '$password', 'child', '$guardianUsername', '$email');";
 		$result = mysqli_query($connect, $query);
 
 		if($result){
