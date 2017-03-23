@@ -6,6 +6,7 @@
 	$password = $_POST['password'];
 	$email = $_POST['email'];
 	$role = $_POST['role'];
+	$guardian = $_POST['guardian'];
 
 	$query = "SELECT * FROM users WHERE BINARY username = '$username';";
 	$result = mysqli_query($connect, $query);
@@ -14,7 +15,7 @@
 		echo json_encode(array("status" => "inuse"));
 	}
 	else{
-		$query = "INSERT INTO users (username, password, role, email) VALUES ('$username', '$password', '$role', '$email');";
+		$query = "INSERT INTO users (username, password, role, guardian, email) VALUES ('$username', '$password', '$role', '$guardian', '$email');";
 		$result = mysqli_query($connect, $query);
 		
 		if($result){
