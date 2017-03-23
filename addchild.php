@@ -17,7 +17,7 @@
 		echo json_encode(array("status" => "fail"));
 				mysqli_close($connect);
 	}
-/*
+
 	$query = "SELECT * FROM users WHERE BINARY username = '$username';";
 	$result = mysqli_query($connect, $query);
 
@@ -50,5 +50,5 @@
 			mysqli_close($connect);
 		}
 	}
-	mysqli_close($connect);*/
+	mysqli_close($connect);
 ?>
