@@ -29,8 +29,6 @@
 		$result = mysqli_query($connect, $query);
 
 		if($result){
-			echo json_encode(array("status" => "HERE"));
-			mysqli_close($connect);
 			
 			$query = "INSERT INTO $guardianUsername (username, namne) VALUES ('$childUsername', '$name');";
 			$result = mysqli_query($connect, $query);
