@@ -50,7 +50,7 @@
 		else {
     		echo json_encode(array("status" => "fail"));
 			mysqli_close($connect);
-		}
-	}*/
+		}*/
+	}
 	mysqli_close($connect);
 ?>
