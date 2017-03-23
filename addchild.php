@@ -3,7 +3,7 @@
 	$guardianUsername = $_POST['guardianUsername'];
 	$childUsername = $_POST['childUsername'];
 	$password = $_POST['password'];
-	$name = $_POST["name"];
+	$name = $_POST['name'];
 
 	$query = "SELECT * FROM users WHERE BINARY username = '$guardianUsername';";
 	$result = mysqli_query($connect, $query);
@@ -30,7 +30,7 @@
 
 		if($result){
 			
-			$query = "INSERT INTO $guardianUsername (username, namne) VALUES ('$childUsername', '$name');";
+			$query = "INSERT INTO $guardianUsername (username, name) VALUES ('$childUsername', '$name');";
 			$result = mysqli_query($connect, $query);
 
 			if($result){
