@@ -2,10 +2,10 @@
 
 	require "connect.php";
 
-	$username = $_POST["username"];
-	$password = $_POST["password"];
-	$email = $_POST["email"];
-	$role = $_POST["role"];
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+	$email = $_POST['email'];
+	$role = $_POST['role'];
 
 	$query = "SELECT * FROM users WHERE BINARY username = '$username';";
 	$result = mysqli_query($connect, $query);
