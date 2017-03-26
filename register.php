@@ -30,7 +30,7 @@
 			`Blatitude` DOUBLE NULL DEFAULT NULL,
 			`Blatitude` DOUBLE NULL DEFAULT NULL,
 			`Bradius` DOUBLE NULL DEFAULT NULL,
-			`notification` DOUBLE NULL DEFAULT NULL,
+			`notification` INT NULL DEFAULT NULL,
 			PRIMARY KEY (`id`))";
 			
 			$result = mysqli_query($connect, $query);
