@@ -29,7 +29,14 @@
 			$query = "INSERT INTO ".$guardianUsername." (username, name) VALUES ('$childUsername', '$name');";
 			$result1 = mysqli_query($connect, $query);
 
-			$query = "INSERT INTO ".$childUsername." (username) VALUES ('$guardianUsername');";
+			//$query = "INSERT INTO ".$childUsername." (username) VALUES ('$guardianUsername');";
+			$query = "CREATE TABLE `$childUsername` (
+			`id` INT NOT NULL AUTO_INCREMENT,
+			`username` VARCHAR(45) NOT NULL DEFAULT `$guardianUsername`,
+			`BeaconLatitude` DOUBLE NULL DEFAULT NULL,
+			`BeaconLongitude` DOUBLE NULL DEFAULT NULL,
+			`BeaconRadius` DOUBLE NULL DEFAULT NULL,
+			PRIMARY KEY (`id`))";
 			$result2 = mysqli_query($connect, $query);
 			if($result1 && $result2){
 				echo json_encode(array("status" => "added"));
