@@ -63,7 +63,7 @@
 
 			$query = "CREATE TABLE `$childUsername` (
 			`id` INT NOT NULL AUTO_INCREMENT,
-			`username` VARCHAR(45) NOT NULL DEFAULT NULL,
+			`username` VARCHAR(45) DEFAULT NULL,
 			`BeaconLatitude` DOUBLE NULL DEFAULT NULL,
 			`BeaconLongitude` DOUBLE NULL DEFAULT NULL,
 			`BeaconRadius` DOUBLE NULL DEFAULT NULL,
