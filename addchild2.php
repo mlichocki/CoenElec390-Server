@@ -26,7 +26,7 @@
 	if(mysqli_num_rows($result) > 0){
 		$row = mysqli_fetch_assoc($result);
 		if($row["password"] == $password){
-			$query = "INSERT INTO ".$guardianUsername." (username, name) VALUES ('$childUsername', '$name');";
+			//$query = "INSERT INTO ".$guardianUsername." (username, name) VALUES ('$childUsername', '$name');";
 			$result1 = mysqli_query($connect, $query);
 
 			$query = "INSERT INTO ".$childUsername." (username) VALUES ('$guardianUsername');";
