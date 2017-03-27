@@ -74,7 +74,7 @@
 			if($result1 && $result2){
 				$query = "INSERT INTO ".$childUsername." (username) VALUES ('$guardianUsername');";
 				$result = mysqli_query($connect, $query);
-				echo json_encode(array("status" => "success", "name" => ".$name.", "username" => ".$childUsername."));
+				echo json_encode(array("status" => "success", "name" => "$name", "username" => "$childUsername"));
 				mysqli_close($connect);
 			}
 			else{
