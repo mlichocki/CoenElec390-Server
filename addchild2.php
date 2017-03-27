@@ -53,7 +53,7 @@
 	}
 	else{
 	
-		$query = "INSERT INTO users (username, password, role, email) VALUES ('$childUsername', '$password', "Child", '$email');";
+		$query = "INSERT INTO users (username, password, role, email) VALUES ('$childUsername', '$password', 'Child', '$email');";
 		$result = mysqli_query($connect, $query);
 
 		if($result){
