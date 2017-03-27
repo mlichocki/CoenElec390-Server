@@ -14,6 +14,8 @@
 		while($row = mysqli_fetch_assoc($result)){
 			$query = "INSERT INTO `$row["username"]` (latitude, longitude) VALUES ($latitude, $longitude);";
 			$result = mysqli_query($connect, $query);
+			echo json_encode(array("role" => $row["role"]));
+			mysqli_close($connect);
 		}
 	}
 	else{
