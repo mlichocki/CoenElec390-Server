@@ -63,7 +63,7 @@
 
 			$query = "CREATE TABLE `$childUsername` (
 			`id` INT NOT NULL AUTO_INCREMENT,
-			`username` VARCHAR(45) NOT NULL DEFAULT `TEST`,
+			`username` VARCHAR(45) NOT NULL DEFAULT '.$guardianUsername.',
 			`BeaconLatitude` DOUBLE NULL DEFAULT NULL,
 			`BeaconLongitude` DOUBLE NULL DEFAULT NULL,
 			`BeaconRadius` DOUBLE NULL DEFAULT NULL,
@@ -76,7 +76,7 @@
 				mysqli_close($connect);
 			}
 			else{
-				//mysqli_query($connect, "DELETE FROM users where username = '$childUsername'");
+				mysqli_query($connect, "DELETE FROM users where username = '$childUsername'");
 				echo json_encode(array("status" => "fail"));
 				mysqli_close($connect);
 			}
