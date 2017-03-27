@@ -5,7 +5,7 @@
 	$password = $_POST['password'];
 	$name = $_POST['name'];
 
-	$query = "SELECT * FROM users WHERE BINARY username = '$guardianUsername';";
+	$query = "SELECT * FROM users WHERE username = '$guardianUsername';";
 	$result = mysqli_query($connect, $query);
 
 	//Search for the guardian and get their email
@@ -26,7 +26,7 @@
 	if(mysqli_num_rows($result) > 0){
 		$row = mysqli_fetch_assoc($result);
 		if($row["password"] == $password){
-			$query = "INSERT INTO ".$guardianUsername." (username, name) VALUES ('$childUsername', 'name');";
+			$query = "INSERT INTO ".$guardianUsername." (username, name) VALUES ('$childUsername', '$name');";
 			$result1 = mysqli_query($connect, $query);
 
 			$query = "INSERT INTO ".$childUsername." (username) VALUES ('$guardianUsername');";
@@ -53,7 +53,7 @@
 	}
 	else{
 	
-		$query = "INSERT INTO users (username, password, role, guardian, email) VALUES ('$childUsername', '$password', 'child', '$guardianUsername', '$email');";
+		$query = "INSERT INTO users (username, password, role, email) VALUES ('$childUsername', '$password', 'child', '$email');";
 		$result = mysqli_query($connect, $query);
 
 		if($result){
