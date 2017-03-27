@@ -12,7 +12,7 @@
 
 	if($result){
 		while($row = mysqli_fetch_assoc($result)){
-			$query = "INSERT INTO $row["username"] (latitude, longitude) VALUES ($latitude, $longitude);";
+			$query = "INSERT INTO `$row["username"]` (latitude, longitude) VALUES ($latitude, $longitude);";
 			$result = mysqli_query($connect, $query);
 		}
 	}
