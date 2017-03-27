@@ -20,7 +20,7 @@
 	}
 
 	//search if child already exists
-	$query = "SELECT * FROM users WHERE BINARY username = '$childUsername';";
+	$query = "SELECT * FROM users WHERE username = '$childUsername';";
 	$result = mysqli_query($connect, $query);
 
 	if(mysqli_num_rows($result) > 0){
@@ -76,7 +76,7 @@
 				mysqli_close($connect);
 			}
 			else{
-				mysqli_query($connect, "DELETE FROM users where username = '$childUsername'");
+				//mysqli_query($connect, "DELETE FROM users where username = '$childUsername'");
 				echo json_encode(array("status" => "fail"));
 				mysqli_close($connect);
 			}
