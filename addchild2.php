@@ -63,7 +63,7 @@
 
 			$query = "CREATE TABLE `$childUsername` (
 			`id` INT NOT NULL AUTO_INCREMENT,
-			`username` VARCHAR(45) NOT NULL DEFAULT '.$guardianUsername.',
+			`username` VARCHAR(45) NOT NULL DEFAULT NULL,
 			`BeaconLatitude` DOUBLE NULL DEFAULT NULL,
 			`BeaconLongitude` DOUBLE NULL DEFAULT NULL,
 			`BeaconRadius` DOUBLE NULL DEFAULT NULL,
@@ -72,6 +72,8 @@
 			$result2 = mysqli_query($connect, $query);
 
 			if($result1 && $result2){
+				$query = "INSERT INTO ".$childUsername." (username) VALUES ('$guardianUsername');";
+				$result = mysqli_query($connect, $query);
 				echo json_encode(array("status" => "success", "name" => ".$name.", "username" => ".$childUsername."));
 				mysqli_close($connect);
 			}
