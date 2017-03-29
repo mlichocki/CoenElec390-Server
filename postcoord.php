@@ -18,14 +18,14 @@
 				$distancelong = $row["BeaconLongitude"] - $longitude;
 				$distance = sqrt(pow($distancelat,2) + pow($distancelong,2));
 				if($distance <= $row["BeaconRadius"]){
-					$notification = TRUE;
+					$notification = 5;
 				}
 				else{
-					$notification = FALSE;
+					$notification = 0;
 				}
 			}
 			else{
-				$notification = FALSE;
+				$notification = 0;
 			}
 			
 			$query = "UPDATE `$tablename` SET latitude = '$latitude', longitude = '$longitude', notification = '$notification' WHERE username = '$username';";
