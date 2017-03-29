@@ -28,7 +28,7 @@
 				$notification = null;
 			}*/
 			
-			$query = "UPDATE `$tablename` SET latitude = '$latitude', longitude = '$longitude', notification = '$notification' WHERE username = '$username';";
+			$query = "UPDATE `$tablename` SET latitude = '$latitude', longitude = '$longitude' WHERE username = '$username';";
 			$result2 = mysqli_query($connect, $query);
 		}
 						     
