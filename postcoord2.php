@@ -9,7 +9,7 @@
 	$query = "SELECT * FROM `$username`;";
 	$result = mysqli_query($connect, $query);
 
-	if($result){
+	if(mysqli_num_rows($result) > 0){
 		while($row = mysqli_fetch_assoc($result)){
 			$tablename = $row["username"];
 			$query = "UPDATE '$tablename' SET latitude = '$latitude', longitude = '$longitude' WHERE username = '$username';";
