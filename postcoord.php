@@ -18,10 +18,10 @@
 				$distancelong = $row["BeaconLongitude"] - $longitude;
 				$distance = sqrt(pow($distancelat,2) + pow($distancelong,2));
 				if($distance <= $row["BeaconRadius"]){
-					$notification = 5;
+					$notification = 2;
 				}
 				else{
-					$notification = 0;
+					$notification = 1;
 				}
 			}
 			else{
