@@ -13,7 +13,7 @@
 		while($row = mysqli_fetch_assoc($result)){
 			$tablename = $row["username"];
 			
-			/*if(($row["BeaconLatitude"] != null) && ($row["BeaconLongitude"] != null) && ($row["BeaconRadius"] != null)){ 
+			if(($row["BeaconLatitude"] != null) && ($row["BeaconLongitude"] != null) && ($row["BeaconRadius"] != null)){ 
 				$distancelat = $row["BeaconLatitude"] - $latitude;
 				$distancelong = $row["BeaconLongitude"] - $longitude;
 				$distance = sqrt(pow($distancelat,2) + pow($distancelong,2));
@@ -26,7 +26,7 @@
 			}
 			else{
 				$notification = null;
-			}*/
+			}
 			
 			$query = "UPDATE `$tablename` SET latitude = '$latitude', longitude = '$longitude' WHERE username = '$username';";
 			$result2 = mysqli_query($connect, $query);
