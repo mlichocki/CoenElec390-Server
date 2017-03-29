@@ -11,8 +11,8 @@
 
 	if($result){
 		while($row = mysqli_fetch_assoc($result)){
-			$query = "UPDATE '"$row["username"]"' SET latitude = '$latitude', longitude = '$longitude' WHERE username = '$username';";
-			$result = mysqli_query($connect, $query);
+			$query = "UPDATE `$row['username']` SET latitude = '$latitude', longitude = '$longitude' WHERE username = '$username';";
+			$result2 = mysqli_query($connect, $query);
 		}
 		mysqli_close($connect);
 	}
