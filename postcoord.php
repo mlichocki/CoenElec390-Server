@@ -14,8 +14,8 @@
 			$tablename = $row["username"];
 			
 			if(($row["BeaconLatitude"] != null) && ($row["BeaconLongitude"] != null) && ($row["BeaconRadius"] != null)){ 
-				$distancelat = $row["BeaconLatitude"] - $latitude;
-				$distancelong = $row["BeaconLongitude"] - $longitude;
+				$distancelat = ($row["BeaconLatitude"] - $latitude)*1000*1000/9;
+				$distancelong = ($row["BeaconLongitude"] - $longitude)*1000*1000*cos(2*M_PI*latitude/360)/9;
 				$distance = sqrt(pow($distancelat,2) + pow($distancelong,2));
 				if($distance <= $row["BeaconRadius"]){
 					$notification = 2;
