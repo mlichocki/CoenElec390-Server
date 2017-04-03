@@ -36,6 +36,9 @@
 					//notification: 1 indicates left beacon
 					$notification = 1;
 				}
+				else{
+					$notification = 0;
+				}
 			}
 			else{
 				//notification: 0 indicates no notification
