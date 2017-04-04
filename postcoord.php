@@ -45,9 +45,9 @@
 				$notification = 0;
 			}
 			
-			if(strcmp($status, "DISCONNECTED") == 0){
+			if((strcmp($status, "DISCONNECTED") == 0) && ($notification < 20)){
 				//notification: 3 indicated lost connection
-				$notification = 3;
+				$notification = $notification + 10;
 			}
 			$query = "UPDATE `$tablename` SET latitude = '$latitude', longitude = '$longitude', notification = '$notification' WHERE username = '$username';";
 			$result2 = mysqli_query($connect, $query);
