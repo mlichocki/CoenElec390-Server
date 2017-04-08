@@ -23,9 +23,9 @@
 			`id` INT NOT NULL AUTO_INCREMENT,
 			`username` VARCHAR(45) NOT NULL,
 			`name` TEXT(45) NOT NULL,
-			`latitude` DOUBLE NULL DEFAULT NULL,
-			`longitude` DOUBLE NULL DEFAULT NULL,
-			`notification` INT NULL DEFAULT NULL,
+			`latitude` TEXT(45) NULL DEFAULT NULL,
+			`longitude` TEXT(45) NULL DEFAULT NULL,
+			`notification` TEXT(45) NULL DEFAULT NULL,
 			PRIMARY KEY (`id`))";
 			
 			$result = mysqli_query($connect, $query);
