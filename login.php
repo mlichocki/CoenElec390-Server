@@ -11,15 +11,24 @@
 	$result = mysqli_query($connect, $query);
 
 	//If the user is found
-	if(mysqli_num_rows($result) ==1){
+	if(mysqli_num_rows($result) == 1){
 		$row = mysqli_fetch_assoc($result);
 		echo json_encode(array("role" => $row["role"]));
 		mysqli_close($connect);
 
 	}
 	else{
-		echo "Login unsuccessful";
-		mysqli_close($connect);
+		$query = "SELECT * FROM users WHERE BINARY username = '$username' ;";
+		$result = mysqli_query($connect, $query);
+		
+		if(mysqli_num_rows($result) == 1){
+			echo json_encode(array("role" => "PASSWORD"));
+			mysqli_close($connect);
+		}
+		else{
+			echo json_encode(array("role" => "FAIL"));
+			mysqli_close($connect);
+		}
 	}
 
 ?>
