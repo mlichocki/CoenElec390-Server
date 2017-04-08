@@ -64,9 +64,9 @@
 			$query = "CREATE TABLE `$childUsername` (
 			`id` INT NOT NULL AUTO_INCREMENT,
 			`username` VARCHAR(45) DEFAULT NULL,
-			`BeaconLatitude` DOUBLE NULL DEFAULT NULL,
-			`BeaconLongitude` DOUBLE NULL DEFAULT NULL,
-			`BeaconRadius` DOUBLE NULL DEFAULT NULL,
+			`BeaconLatitude` TEXT(45) NULL DEFAULT NULL,
+			`BeaconLongitude` TEXT(45) NULL DEFAULT NULL,
+			`BeaconRadius` TEXT(45) NULL DEFAULT NULL,
 			PRIMARY KEY (`id`))";
 
 			$result2 = mysqli_query($connect, $query);
