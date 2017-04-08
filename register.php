@@ -7,7 +7,7 @@
 	$email = $_POST['email'];
 	$role = $_POST['role'];
 
-	$query = "SELECT * FROM users WHERE BINARY username = '$username';";
+	$query = "SELECT * FROM users WHERE username = '$username';";
 	$result = mysqli_query($connect, $query);
 
 	if(mysqli_num_rows($result) > 0){
