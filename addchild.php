@@ -12,10 +12,9 @@
 	if(mysqli_num_rows($result) == 1){
 		$row = mysqli_fetch_assoc($result);
 		$email = $row["email"];
-	
 	}
 	else{
-		echo json_encode(array("status" => "fail"));
+		echo json_encode(array("status" => "error"));
 		mysqli_close($connect);
 	}
 
@@ -31,8 +30,9 @@
 
 			$query = "INSERT INTO ".$childUsername." (username) VALUES ('$guardianUsername');";
 			$result2 = mysqli_query($connect, $query);
+			
 			if($result1 && $result2){
-				echo json_encode(array("status" => "added"));
+				echo json_encode(array("status" => "added", "name" => "$name", "username" => "$childUsername"));
 				mysqli_close($connect);
 			}
 			else{
@@ -42,12 +42,12 @@
 				$query = "DELETE FROM ".$childUsername." where username = '$guardianUsername';";
 				$result = mysqli_query($connect, $query);
 
-				echo json_encode(array("status" => "fail"));
+				echo json_encode(array("status" => "error"));
 				mysqli_close($connect);
 			}
 		}
 		else{
-			echo json_encode(array("status" => "inuse"));
+			echo json_encode(array("status" => "password"));
 			mysqli_close($connect);
 		}
 	}
@@ -79,7 +79,7 @@
 			}
 			else{
 				mysqli_query($connect, "DELETE FROM users where username = '$childUsername'");
-				echo json_encode(array("status" => "fail"));
+				echo json_encode(array("status" => "error"));
 				mysqli_close($connect);
 			}
 
@@ -87,7 +87,7 @@
 		else {
 			$query = "DELETE FROM users where username = '$childUsername';";
 			$result = mysqli_query($connect, $query);
-    		echo json_encode(array("status" => "fail"));
+    			echo json_encode(array("status" => "error"));
 			mysqli_close($connect);
 		}
 	}
