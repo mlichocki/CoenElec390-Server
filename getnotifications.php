@@ -10,7 +10,7 @@ require "connect.php";
 	if(mysqli_num_rows($result) > 0){
 		$notifications = array();
 		while($row = mysqli_fetch_assoc($result)){
-			array_push($children,array("name"=>$row["name"], "notification"=>$row["notification"]));
+			array_push($notifications,array("name"=>$row["name"], "notification"=>$row["notification"]));
 		}
 	}
 	
