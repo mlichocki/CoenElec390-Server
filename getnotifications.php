@@ -13,8 +13,8 @@ require "connect.php";
 			array_push($notifications,array("name"=>$row["name"], "notification"=>$row["notification"]));
 			
 			if($row["notification"] != 0){
-				$query = "UPDATE `$guardianUsername` SET notification = 0;";
-				$result2 = mysqli_query($connect, $query);
+				//$query = "UPDATE `$guardianUsername` SET notification = 0;";
+				//$result2 = mysqli_query($connect, $query);
 			}
 		}
 	}
