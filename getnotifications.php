@@ -11,6 +11,11 @@ require "connect.php";
 		$notifications = array();
 		while($row = mysqli_fetch_assoc($result)){
 			array_push($notifications,array("name"=>$row["name"], "notification"=>$row["notification"]));
+			
+			if($row["notification"] != 0){
+				$query = "UPDATE `$guardianUsername` SET notification = 0;";
+				$result2 = mysqli_query($connect, $query);
+			}
 		}
 	}
 	
